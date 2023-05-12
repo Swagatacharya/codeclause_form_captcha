@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Contact Form with CAPTCHA</title>
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+  <style>
+    label {
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    input[type="text"], textarea {
+      width: 300px;
+      height: 30px;
+    }
+
+    .g-recaptcha {
+      margin-top: 10px;
+    }
+
+    button[type="submit"] {
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Contact Form</h1>
+  <form action="process_form.php" method="POST">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" required>
+
+    <label for="email">Email:</label>
+    <input type="text" id="email" name="email" required>
+
+    <label for="message">Message:</label>
+    <textarea id="message" name="message" rows="5" required></textarea>
+
+	
+    <label for="captcha">Captcha:</label>
+    <textarea id="captcha" name="captcha" rows="5" required></textarea>
+
+    <div class="g-recaptcha" data-sitekey="YOUR_RECAPTCHA_SITE_KEY"></div>
+
+    <button type="submit">Submit</button>
+  </form>
+</body>
+</html>
